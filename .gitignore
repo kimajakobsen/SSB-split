@@ -1,0 +1,8 @@
+/target/
+/.classpath
+/.project
+/customer.tbl
+/date.tbl
+/lineorder.tbl
+/part.tbl
+/supplier.tbl
