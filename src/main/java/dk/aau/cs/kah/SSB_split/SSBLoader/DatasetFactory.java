@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import dk.aau.cs.kah.SSB_split.Config;
+
 public class DatasetFactory {
 	private List<String> customerForeignKeys = new ArrayList<String>();
 	private List<String> partForeignKeys = new ArrayList<String>();

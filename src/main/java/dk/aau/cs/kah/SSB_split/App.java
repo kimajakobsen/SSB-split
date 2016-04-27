@@ -7,7 +7,6 @@ import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 
-import dk.aau.cs.kah.SSB_split.SSBLoader.Config;
 import dk.aau.cs.kah.SSB_split.SSBLoader.DatasetFactory;
 
 public class App 

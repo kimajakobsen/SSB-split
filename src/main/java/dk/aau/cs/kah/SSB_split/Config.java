@@ -1,7 +1,7 @@
-package dk.aau.cs.kah.SSB_split.SSBLoader;
+package dk.aau.cs.kah.SSB_split;
 
 public class Config {
-	private static int linesFromLineorder = 10000;
+	private static int linesFromLineorder = 1000;
 	private static String lineorder = "../../ssb-dbgen/lineorder.tbl";
 	private static String customer = "../../ssb-dbgen/customer.tbl";
 	private static String part = "../../ssb-dbgen/part.tbl";
