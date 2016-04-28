@@ -24,6 +24,7 @@ public class App
 		options.addOption("p", "part", 		true, 	"the location of the part tbl file");
 		options.addOption("c", "customer", 	true, 	"the location of the customer tbl file");
 		options.addOption("d", "date", 		true, 	"the location of the date tbl file");
+		options.addOption("sp","split", 	true, 	"Number of line that should be used from the lineorder dataset.");
 	
 		try {
 		    CommandLine line = parser.parse( options, args );
@@ -50,6 +51,9 @@ public class App
 			}
 	    	if (line.hasOption( "part" ))  {
 	    		Config.setPart(line.getOptionValue("part"));
+			}
+	    	if (line.hasOption( "split" ))  {
+	    		Config.setLinesFromLineorder(line.getOptionValue("split"));
 			}
 		}
 		catch( ParseException exp ) {

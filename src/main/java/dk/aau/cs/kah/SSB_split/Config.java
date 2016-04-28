@@ -1,7 +1,7 @@
 package dk.aau.cs.kah.SSB_split;
 
 public class Config {
-	private static int linesFromLineorder = 1000;
+	private static int linesFromLineorder = 10000;
 	private static String lineorder = "../../ssb-dbgen/lineorder.tbl";
 	private static String customer = "../../ssb-dbgen/customer.tbl";
 	private static String part = "../../ssb-dbgen/part.tbl";
@@ -53,8 +53,8 @@ public class Config {
 		return linesFromLineorder;
 	}
 
-	public static void setLinesFromLineorder(int linesFromLineorder) {
-		Config.linesFromLineorder = linesFromLineorder;
+	public static void setLinesFromLineorder(String string) {
+		Config.linesFromLineorder = Integer.parseInt(string);
 	}
 
 	public static String getOutput() {
