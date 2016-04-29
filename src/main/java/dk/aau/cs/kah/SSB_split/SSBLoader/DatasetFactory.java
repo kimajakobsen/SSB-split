@@ -8,17 +8,17 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.nio.channels.FileChannel;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 import dk.aau.cs.kah.SSB_split.Config;
 
 public class DatasetFactory {
-	private List<String> customerForeignKeys = new ArrayList<String>();
-	private List<String> partForeignKeys = new ArrayList<String>();
-	private List<String> supplierForeignKeys = new ArrayList<String>();
-	private List<String> dateForeignKeys = new ArrayList<String>();
+	private Set<String> customerForeignKeys = new HashSet<String>(12714);
+	private Set<String> partForeignKeys = new HashSet<String>(38800);
+	private Set<String> supplierForeignKeys = new HashSet<String>(51200);
+	private Set<String> dateForeignKeys = new HashSet<String>(122602);
 	
 	public void writeDatasetToDisk() {
 		try {
@@ -104,7 +104,7 @@ public class DatasetFactory {
 	    }
 	}
 	
-	private void readWriteDimension(String inputFilePath, String outputFileName, List<String> foreignKeys) throws FileNotFoundException,
+	private void readWriteDimension(String inputFilePath, String outputFileName, Set<String> foreignKeys) throws FileNotFoundException,
 	UnsupportedEncodingException {
 	Scanner input = new Scanner(new File(inputFilePath));
 	PrintWriter writer = new PrintWriter(Config.getOutput()+outputFileName, "UTF-8");
