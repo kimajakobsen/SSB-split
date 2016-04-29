@@ -18,6 +18,7 @@ public class DatasetFactory {
 	private List<String> customerForeignKeys = new ArrayList<String>();
 	private List<String> partForeignKeys = new ArrayList<String>();
 	private List<String> supplierForeignKeys = new ArrayList<String>();
+	private List<String> dateForeignKeys = new ArrayList<String>();
 	
 	public void writeDatasetToDisk() {
 		try {
@@ -42,7 +43,8 @@ public class DatasetFactory {
 	}
 
 	private void readWriteDate() throws IOException {
-		copyFile(Config.getDate(),Config.getOutput()+"date.tbl");
+		readWriteDimension(Config.getDate(),"date.tbl",dateForeignKeys);
+		//copyFile(Config.getDate(),Config.getOutput()+"date.tbl");
 	}
 
 	private void readWriteSupplier() throws FileNotFoundException, UnsupportedEncodingException {
@@ -68,6 +70,8 @@ public class DatasetFactory {
 			customerForeignKeys.add(line[2]);
 			partForeignKeys.add(line[3]);
 			supplierForeignKeys.add(line[4]);
+			dateForeignKeys.add(line[5]);
+			dateForeignKeys.add(line[15]);
 			writer.println(readLine);
 		    counter++;
 		}
