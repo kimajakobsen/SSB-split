@@ -1,13 +1,10 @@
 package dk.aau.cs.kah.SSB_split.SSBLoader;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
-import java.nio.channels.FileChannel;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
@@ -79,30 +76,30 @@ public class DatasetFactory {
 		writer.close();
 	}
 	
-	private static void copyFile(String string, String string2) throws IOException {
-		File from = new File(string);
-		File to = new File(string2);
-	    if(!to.exists()) {
-	    	to.createNewFile();
-	    }
-
-	    FileChannel source = null;
-	    FileChannel destination = null;
-
-	    try {
-	        source = new FileInputStream(from).getChannel();
-	        destination = new FileOutputStream(to).getChannel();
-	        destination.transferFrom(source, 0, source.size());
-	    }
-	    finally {
-	        if(source != null) {
-	            source.close();
-	        }
-	        if(destination != null) {
-	            destination.close();
-	        }
-	    }
-	}
+//	private static void copyFile(String string, String string2) throws IOException {
+//		File from = new File(string);
+//		File to = new File(string2);
+//	    if(!to.exists()) {
+//	    	to.createNewFile();
+//	    }
+//
+//	    FileChannel source = null;
+//	    FileChannel destination = null;
+//
+//	    try {
+//	        source = new FileInputStream(from).getChannel();
+//	        destination = new FileOutputStream(to).getChannel();
+//	        destination.transferFrom(source, 0, source.size());
+//	    }
+//	    finally {
+//	        if(source != null) {
+//	            source.close();
+//	        }
+//	        if(destination != null) {
+//	            destination.close();
+//	        }
+//	    }
+//	}
 	
 	private void readWriteDimension(String inputFilePath, String outputFileName, Set<String> foreignKeys) throws FileNotFoundException,
 	UnsupportedEncodingException {
